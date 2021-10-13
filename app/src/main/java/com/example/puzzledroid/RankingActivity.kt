@@ -5,16 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class MainActivity : AppCompatActivity() {
+class RankingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_ranking)
 
-        val rankingBtn: Button = findViewById(R.id.Rankingbtn)
-        rankingBtn.setOnClickListener{
-            val intent = Intent(this,RankingActivity::class.java)
+        val ToMenuBtn: Button = findViewById(R.id.ToMenuBtn)
+        ToMenuBtn.setOnClickListener{
+            val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
-        }
-
+    }
 }
