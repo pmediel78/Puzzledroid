@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/purple_700"
     android:orientation ="vertical">
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Bienvenidos al mejor juego de puzzles"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:layout_margin="32dp"/>
 
@@ -41,7 +41,7 @@
         android:text="JUGAR"
         android:textColor="@color/white"
         android:textSize="22sp"
-        android:background="@color/verde"
+        android:background="@color/purple_700"
         />
     <Space
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
         android:text="PUNTUACIONES"
         android:textColor="@color/white"
         android:textSize="22sp"
-        android:background="@color/boton2"/>
+        android:background="@color/purple_700"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp"/>
@@ -62,7 +62,7 @@
         android:text="AYUDA"
         android:textColor="@color/white"
         android:textSize="22sp"
-        android:background="@color/primary"
+        android:background="@color/purple_700"
         />
 
 
