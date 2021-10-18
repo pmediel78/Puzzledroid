@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,RankingActivity::class.java)
             startActivity(intent)
         }
+        val juegoBtn: Button = findViewById(R.id.Juegobtn)
+        juegoBtn.setOnClickListener{
+            val intent = Intent(this,JuegoActivity::class.java)
+            startActivity(intent)
+        }
+
         }
 
 }
