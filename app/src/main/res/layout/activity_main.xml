@@ -13,17 +13,20 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="PUZZLETEAM"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="42sp"
-        android:layout_margin="52dp"/>
+        android:layout_margin="30dp"
+
+        android:fontFamily="@font/lilita_one"/>
 
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="140dp"
-        android:layout_height="136dp"
+        android:layout_width="117dp"
+        android:layout_height="104dp"
         android:layout_gravity="center"
 
         android:src="@mipmap/puzz" />
+
     <TextView
         android:id="@+id/tvBienvenida"
         android:layout_width="wrap_content"
@@ -32,40 +35,52 @@
         android:text="Bienvenidos al mejor juego de puzzles"
         android:textColor="@color/white"
         android:textSize="25sp"
-        android:layout_margin="32dp"/>
+        android:layout_margin="18dp"/>
 
-    <Button
-        android:id="@+id/Juegobtn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="JUGAR"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:background="@color/purple_700"
-        />
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-    <Button
-        android:id="@+id/Rankingbtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PUNTUACIONES"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:background="@color/purple_700"/>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp"/>
-    <Button
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="10dp"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AYUDA"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:background="@color/purple_700"
-        />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Juegobtn"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:background="@color/purple_700"
+            android:text="Jugar"
+            android:textSize="22sp"
+         />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Rankingbtn"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:background="@color/purple_700"
+            android:text="Ranking"
+            android:textSize="22sp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:background="@color/purple_700"
+            android:text="AYUDA"
+            android:textSize="22sp"
+            app:cornerRadius="16dp" />
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
