@@ -10,11 +10,9 @@ class JuegoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_juego)
 
-        val ToMenuBtn: Button = findViewById(R.id.ToMenuBtn)
-        ToMenuBtn.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        }
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        //Button OnClickListeners
+
 
     }
 }
