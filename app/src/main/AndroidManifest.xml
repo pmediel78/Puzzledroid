@@ -9,19 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Puzzledroid">
-
+        <activity
+            android:name=".MainActivity2"
+            android:exported="true" />
         <activity
             android:name=".JuegoActivity"
             android:exported="true"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".MainActivity"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".RankingActivity"
             android:exported="true"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            android:parentActivityName=".MainActivity"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
