@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     fun SetButtonOnClickListeners() {
         RankingButtonClick()
         JuegoButtonClick()
+        AyudaButtonClick()
     }
 
     private fun JuegoButtonClick() {
@@ -29,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun RankingButtonClick() {
         val rankingBtn: Button = findViewById(R.id.Rankingbtn)
+        rankingBtn.setOnClickListener {
+            val intent = Intent(this, RankingActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun AyudaButtonClick() {
+        val rankingBtn: Button = findViewById(R.id.Ayudabtn)
         rankingBtn.setOnClickListener {
             val intent = Intent(this, RankingActivity::class.java)
             startActivity(intent)
