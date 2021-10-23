@@ -77,7 +77,6 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard1"
-            android:tag="card1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -94,7 +93,6 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard2"
-            android:tag="card2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -111,7 +109,6 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard3"
-            android:tag="card3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -128,7 +125,6 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard4"
-            android:tag="card4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -145,6 +141,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/fondo1"
+            android:tag="draggableCard1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -162,6 +159,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/fondo2"
+            android:tag="draggableCard2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
@@ -178,6 +176,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/fondo3"
+            android:tag="draggableCard3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
@@ -194,6 +193,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/fondo4"
+            android:tag="draggableCard4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|center"
