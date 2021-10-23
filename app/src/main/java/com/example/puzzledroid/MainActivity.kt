@@ -8,12 +8,10 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        println(0);
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
-
-
+        setContentView(R.layout.activity_main)
         SetButtonOnClickListeners();
-
     }
 
     fun SetButtonOnClickListeners() {
