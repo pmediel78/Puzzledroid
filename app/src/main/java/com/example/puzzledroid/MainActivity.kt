@@ -8,17 +8,16 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        println(0);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
         SetButtonOnClickListeners();
-
     }
 
     fun SetButtonOnClickListeners() {
         RankingButtonClick()
         JuegoButtonClick()
+        AyudaButtonClick()
     }
 
     private fun JuegoButtonClick() {
@@ -31,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun RankingButtonClick() {
         val rankingBtn: Button = findViewById(R.id.Rankingbtn)
+        rankingBtn.setOnClickListener {
+            val intent = Intent(this, RankingActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun AyudaButtonClick() {
+        val rankingBtn: Button = findViewById(R.id.Ayudabtn)
         rankingBtn.setOnClickListener {
             val intent = Intent(this, RankingActivity::class.java)
             startActivity(intent)
