@@ -16,12 +16,12 @@ class MainActivity2: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        parentContainer.addDraggableChild(draggableCard1)
-        parentContainer.addDraggableChild(draggableCard2)
-        parentContainer.addDraggableChild(draggableCard3)
-        parentContainer.addDraggableChild(draggableCard4)
+        parentCoordinatorLayout.addDraggableChild(draggableCard1)
+        parentCoordinatorLayout.addDraggableChild(draggableCard2)
+        parentCoordinatorLayout.addDraggableChild(draggableCard3)
+        parentCoordinatorLayout.addDraggableChild(draggableCard4)
 
-        parentContainer.setViewDragListener(object : DraggableCoordinatorLayout.ViewDragListener {
+        parentCoordinatorLayout.setViewDragListener(object : DraggableCoordinatorLayout.ViewDragListener {
             override fun onViewCaptured(view: View, i: Int) {
 
                 when (view.id) {
