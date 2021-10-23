@@ -1,5 +1,6 @@
 package com.example.puzzledroid
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,10 +11,18 @@ class RankingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ranking)
 
-        val ToMenuBtn: Button = findViewById(R.id.ToMenuBtn)
-        ToMenuBtn.setOnClickListener{
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        }
+
+        SetButtonOnClickListeners()
+
+        //SetBackButton Al ActionBar
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
+
+
+
+    fun SetButtonOnClickListeners() {
+
+    }
+
+
 }
