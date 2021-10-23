@@ -77,11 +77,13 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard1"
+            android:tag="card1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:translationZ="2dp">
 
             <ImageView
                 android:layout_width="150dp"
@@ -92,11 +94,13 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard2"
+            android:tag="card2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|start"
+            android:layout_gravity="center"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:translationZ="2dp">
 
             <ImageView
                 android:layout_width="150dp"
@@ -107,11 +111,13 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard3"
+            android:tag="card3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
+            android:layout_gravity="center"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:translationZ="2dp">
 
             <ImageView
                 android:layout_width="150dp"
@@ -122,16 +128,83 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/draggableCard4"
+            android:tag="card4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|center"
+            android:layout_gravity="center"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:translationZ="2dp">
 
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:srcCompat="@drawable/house_part_4" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fondo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="top|center"
+            android:translationX="-75dp"
+            android:translationY="100dp"
+            android:translationZ="1dp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/cuadrado" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fondo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:translationX="75dp"
+            android:translationY="100dp"
+            android:translationZ="1dp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/cuadrado" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fondo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:translationX="-75dp"
+            android:translationY="250dp"
+            android:translationZ="1dp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/cuadrado" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/fondo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:translationX="75dp"
+            android:translationY="250dp"
+            android:translationZ="1dp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:srcCompat="@drawable/cuadrado" />
 
         </com.google.android.material.card.MaterialCardView>
 
