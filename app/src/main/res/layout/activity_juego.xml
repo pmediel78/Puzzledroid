@@ -235,7 +235,7 @@
             android:layout_width="94dp"
             android:layout_height="wrap_content"
             android:gravity="left"
-            android:text="1 (3x3)"
+            android:text="1 (2x2)"
             android:textColor="@color/white"
             android:textSize="20dp"
             />
