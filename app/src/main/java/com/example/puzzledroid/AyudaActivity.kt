@@ -10,6 +10,10 @@ class AyudaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ayuda)
+        SetButtonOnClickListeners()
+
+        //SetBackButton Al ActionBar
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         val myWebView = findViewById<WebView>(R.id.myWebView)
         myWebView.webViewClient = object : WebViewClient() {
@@ -21,5 +25,8 @@ class AyudaActivity : AppCompatActivity() {
         }
         myWebView.settings.javaScriptEnabled = true
         myWebView.loadUrl("https://sites.google.com/d/1jjFHKPbHNH138Rr8hejCFTuhB6t2wmot/p/183uUWn-F7nmc2yBGNhkYLktK3X8mz7yS/edit")
+    }
+    fun SetButtonOnClickListeners() {
+
     }
 }

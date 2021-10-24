@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     private fun AyudaButtonClick() {
         val rankingBtn: Button = findViewById(R.id.Ayudabtn)
         rankingBtn.setOnClickListener {
-            val intent = Intent(this, RankingActivity::class.java)
+            val intent = Intent(this, AyudaActivity::class.java)
             startActivity(intent)
         }
     }
