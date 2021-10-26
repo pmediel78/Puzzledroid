@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:background="@color/purple_700"
-    tools:context=".JuegoActivity">
+    tools:context=".Juego2Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -86,9 +86,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image1"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku1" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -103,9 +104,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image2"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku2" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -120,9 +122,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image3"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku3" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -137,9 +140,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image4"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku4" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -154,9 +158,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image5"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku5" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -171,9 +176,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image6"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku6" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -188,9 +194,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image7"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku7" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -205,9 +212,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image8"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/goku8" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -222,9 +230,10 @@
             android:translationZ="2dp">
 
             <ImageView
+                android:id="@+id/image9"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                app:srcCompat="@drawable/gokuu9" />
+                 />
 
         </com.google.android.material.card.MaterialCardView>
 

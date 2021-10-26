@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.puzzledroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Puzzledroid">
+        <activity
+            android:name=".Juego2Activity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity2"
             android:exported="true" />
@@ -42,8 +47,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
-
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 </manifest>
