@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Puzzledroid">
         <activity
+            android:name=".Juego3Activity"
+            android:exported="true" />
+        <activity
             android:name=".Juego2Activity"
             android:exported="true" />
         <activity

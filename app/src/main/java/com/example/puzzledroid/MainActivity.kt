@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private fun JuegoButtonClick() {
         val juegoBtn: Button = findViewById(R.id.Juegobtn)
         juegoBtn.setOnClickListener {
-            val intent = Intent(this, Juego2Activity::class.java)
+            val intent = Intent(this, Juego3Activity::class.java)
             startActivity(intent)
         }
     }

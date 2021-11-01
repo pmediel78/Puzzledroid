@@ -25,6 +25,13 @@ class MainActivity2: AppCompatActivity() {
         parentCoordinatorLayout.addDraggableChild(draggableCard7)
         parentCoordinatorLayout.addDraggableChild(draggableCard8)
         parentCoordinatorLayout.addDraggableChild(draggableCard9)
+        parentCoordinatorLayout.addDraggableChild(draggableCard10)
+        parentCoordinatorLayout.addDraggableChild(draggableCard11)
+        parentCoordinatorLayout.addDraggableChild(draggableCard12)
+        parentCoordinatorLayout.addDraggableChild(draggableCard13)
+        parentCoordinatorLayout.addDraggableChild(draggableCard14)
+        parentCoordinatorLayout.addDraggableChild(draggableCard15)
+        parentCoordinatorLayout.addDraggableChild(draggableCard16)
 
 
 
@@ -42,6 +49,13 @@ class MainActivity2: AppCompatActivity() {
                     R.id.draggableCard7 -> draggableCard7.isDragged = true
                     R.id.draggableCard8 -> draggableCard8.isDragged = true
                     R.id.draggableCard9 -> draggableCard9.isDragged = true
+                    R.id.draggableCard10 -> draggableCard10.isDragged = true
+                    R.id.draggableCard11 -> draggableCard11.isDragged = true
+                    R.id.draggableCard12 -> draggableCard12.isDragged = true
+                    R.id.draggableCard13 -> draggableCard13.isDragged = true
+                    R.id.draggableCard14 -> draggableCard14.isDragged = true
+                    R.id.draggableCard15 -> draggableCard15.isDragged = true
+                    R.id.draggableCard16 -> draggableCard16.isDragged = true
                 }
             }
 
@@ -57,6 +71,13 @@ class MainActivity2: AppCompatActivity() {
                     R.id.draggableCard7 -> draggableCard7.isDragged = false
                     R.id.draggableCard8 -> draggableCard8.isDragged = false
                     R.id.draggableCard9 -> draggableCard9.isDragged = false
+                    R.id.draggableCard10 -> draggableCard10.isDragged = false
+                    R.id.draggableCard11 -> draggableCard11.isDragged = false
+                    R.id.draggableCard12 -> draggableCard12.isDragged = false
+                    R.id.draggableCard13 -> draggableCard13.isDragged = false
+                    R.id.draggableCard14 -> draggableCard14.isDragged = false
+                    R.id.draggableCard15 -> draggableCard15.isDragged = false
+                    R.id.draggableCard16 -> draggableCard16.isDragged = false
                 }
             }
         })
