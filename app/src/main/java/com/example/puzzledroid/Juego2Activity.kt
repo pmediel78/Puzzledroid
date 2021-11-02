@@ -1,6 +1,6 @@
 package com.example.puzzledroid
 
-import android.app.ActionBar
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,12 +10,11 @@ import kotlinx.android.synthetic.main.activity_main2.draggableCard2
 import kotlinx.android.synthetic.main.activity_main2.draggableCard3
 import kotlinx.android.synthetic.main.activity_main2.draggableCard4
 import kotlinx.android.synthetic.main.activity_main2.parentCoordinatorLayout
-import android.graphics.Bitmap
 
 import android.graphics.BitmapFactory
-import androidx.cardview.widget.CardView
 import kotlinx.android.synthetic.main.activity2_juego.*
-import android.graphics.RectF
+import android.widget.TextView
+import kotlin.text.toInt as toInt1
 
 class Juego2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,17 +50,30 @@ class Juego2Activity : AppCompatActivity() {
         image9.setImageBitmap(imagecropped?.get(8))
 
 
+        val Contador_1= intent.getStringExtra("Counter")?.toInt1()
+        var Counter = Contador_1
+        val Contador: TextView = findViewById(R.id.Counter)
+        Contador.text=Counter.toString()
 
 
-        parentCoordinatorLayout.setViewDragListener(object : DraggableCoordinatorLayout.ViewDragListener {
-            override fun onViewCaptured(view: View, i: Int) {
-            }
+        if (Counter != null) {
+            parentCoordinatorLayout.setViewDragListener(object : DraggableCoordinatorLayout.ViewDragListener {
+                override fun onViewCaptured(view: View, i: Int) {
+                }
 
-            override fun onViewReleased(view: View, v: Float, v1: Float) {
-                val helper = Helper()
-                helper.resolve(view, parentCoordinatorLayout, resources)
-
-            }
-        })
+                override fun onViewReleased(view: View, v: Float, v1: Float) {
+                    val helper = Helper()
+                    Counter += 1
+                    val win= helper.resolve(view, parentCoordinatorLayout, resources,Counter)
+                    val Contador: TextView = findViewById(R.id.Counter)
+                    Contador.text=Counter.toString()
+                    if(win){
+                        val intent = Intent(this@Juego2Activity,Juego3Activity::class.java);
+                        intent.putExtra("Counter", Counter.toString())
+                        startActivity(intent);
+                    }
+                }
+            })
+        }
     }
 }

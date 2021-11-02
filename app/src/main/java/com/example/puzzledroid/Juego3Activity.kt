@@ -1,6 +1,5 @@
 package com.example.puzzledroid
 
-import android.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,12 +21,10 @@ import kotlinx.android.synthetic.main.activity_main2.draggableCard14
 import kotlinx.android.synthetic.main.activity_main2.draggableCard15
 import kotlinx.android.synthetic.main.activity_main2.draggableCard16
 import kotlinx.android.synthetic.main.activity_main2.parentCoordinatorLayout
-import android.graphics.Bitmap
 
 import android.graphics.BitmapFactory
-import androidx.cardview.widget.CardView
 
-import android.graphics.RectF
+import android.widget.TextView
 
 import kotlinx.android.synthetic.main.activity3_juego.*
 
@@ -80,16 +77,24 @@ class Juego3Activity : AppCompatActivity() {
 
 
 
+        val Contador_1= intent.getStringExtra("Counter")?.toInt()
+        var Counter = Contador_1
+        val Contador: TextView = findViewById(R.id.Counter)
+        Contador.text=Counter.toString()
 
-        parentCoordinatorLayout.setViewDragListener(object : DraggableCoordinatorLayout.ViewDragListener {
-            override fun onViewCaptured(view: View, i: Int) {
-            }
+        if (Counter != null) {
+            parentCoordinatorLayout.setViewDragListener(object : DraggableCoordinatorLayout.ViewDragListener {
+                override fun onViewCaptured(view: View, i: Int) {
+                }
 
-            override fun onViewReleased(view: View, v: Float, v1: Float) {
-                val helper = Helper()
-                helper.resolve(view, parentCoordinatorLayout, resources)
-
-            }
-        })
+                override fun onViewReleased(view: View, v: Float, v1: Float) {
+                    val helper = Helper()
+                    Counter += 1
+                    helper.resolve(view, parentCoordinatorLayout, resources,Counter)
+                    val Contador: TextView = findViewById(R.id.Counter)
+                    Contador.text=Counter.toString()
+                }
+            })
+        }
     }
 }

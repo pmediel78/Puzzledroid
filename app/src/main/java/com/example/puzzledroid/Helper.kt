@@ -1,12 +1,13 @@
 package com.example.puzzledroid
 
+import android.content.res.Resources
 import android.view.View
 import android.view.ViewGroup
 import com.google.android.material.card.MaterialCardView
 
 class Helper {
 
-    fun resolve(view: View, parent: ViewGroup, resources: android.content.res.Resources ) {
+    fun resolve(view: View, parent: ViewGroup, resources: Resources, Score: Int?):Boolean {
         var x: Float = 0f
         var y: Float = 0f
         var dist = 100
@@ -25,6 +26,7 @@ class Helper {
 
         val outputViews = getViewsByTag(parent, "card")
 
+
         if (outputViews != null) {
             for (outputView in outputViews) {
                 name = resources.getResourceEntryName(outputView.id)
@@ -36,7 +38,9 @@ class Helper {
 
         if (win) {
             println("GANA")
+            return true
         }
+        return false
     }
 
     private fun getViewsByTag(root: ViewGroup, tag: String): ArrayList<View>? {
