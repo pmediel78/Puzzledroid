@@ -6,7 +6,7 @@ import com.google.android.material.card.MaterialCardView
 
 class Helper {
 
-    fun resolve(view: View, parent: ViewGroup, resources: android.content.res.Resources ) {
+    fun resolve(view: View, parent: ViewGroup, resources: android.content.res.Resources ) :Boolean {
         var x: Float = 0f
         var y: Float = 0f
         var dist = 100
@@ -35,8 +35,9 @@ class Helper {
         }
 
         if (win) {
-            println("GANA")
+            return true
         }
+        return false
     }
 
     private fun getViewsByTag(root: ViewGroup, tag: String): ArrayList<View>? {

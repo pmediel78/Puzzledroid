@@ -78,9 +78,6 @@ class Juego3Activity : AppCompatActivity() {
         image15.setImageBitmap(imagecropped?.get(1))
         image16.setImageBitmap(imagecropped?.get(15))
 
-
-
-
         parentCoordinatorLayout.setViewDragListener(object : DraggableCoordinatorLayout.ViewDragListener {
             override fun onViewCaptured(view: View, i: Int) {
             }

@@ -50,7 +50,7 @@ class JuegoActivity : AppCompatActivity() {
 
             override fun onViewReleased(view: View, v: Float, v1: Float) {
                 val helper = Helper()
-                helper.resolve(view, parentCoordinatorLayout, resources)
+                val win = helper.resolve(view, parentCoordinatorLayout, resources)
 
             }
         })
