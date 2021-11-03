@@ -56,26 +56,22 @@ class Juego3Activity : AppCompatActivity() {
         val imageCropper = ImageCropper()
         val imagecropped = imageCropper.splitBitmap(bm,4,4,16)
 
-
-
         image1.setImageBitmap(imagecropped?.get(0))
-        image2.setImageBitmap(imagecropped?.get(14))
-        image3.setImageBitmap(imagecropped?.get(10))
-        image4.setImageBitmap(imagecropped?.get(8))
-        image5.setImageBitmap(imagecropped?.get(4))
-        image6.setImageBitmap(imagecropped?.get(12))
+        image2.setImageBitmap(imagecropped?.get(4))
+        image3.setImageBitmap(imagecropped?.get(8))
+        image4.setImageBitmap(imagecropped?.get(12))
+        image5.setImageBitmap(imagecropped?.get(1))
+        image6.setImageBitmap(imagecropped?.get(5))
         image7.setImageBitmap(imagecropped?.get(9))
-        image8.setImageBitmap(imagecropped?.get(11))
-        image9.setImageBitmap(imagecropped?.get(3))
+        image8.setImageBitmap(imagecropped?.get(13))
+        image9.setImageBitmap(imagecropped?.get(2))
         image10.setImageBitmap(imagecropped?.get(6))
-        image11.setImageBitmap(imagecropped?.get(2))
-        image12.setImageBitmap(imagecropped?.get(7))
-        image13.setImageBitmap(imagecropped?.get(5))
-        image14.setImageBitmap(imagecropped?.get(13))
-        image15.setImageBitmap(imagecropped?.get(1))
+        image11.setImageBitmap(imagecropped?.get(10))
+        image12.setImageBitmap(imagecropped?.get(14))
+        image13.setImageBitmap(imagecropped?.get(3))
+        image14.setImageBitmap(imagecropped?.get(7))
+        image15.setImageBitmap(imagecropped?.get(11))
         image16.setImageBitmap(imagecropped?.get(15))
-
-
 
         val Contador_1= intent.getStringExtra("Counter")?.toInt()
         var Counter = Contador_1

@@ -57,6 +57,7 @@ class JuegoActivity : AppCompatActivity() {
                     val intent = Intent(this@JuegoActivity,Juego2Activity::class.java);
                     intent.putExtra("Counter", Counter.toString())
                     startActivity(intent);
+                    finish();
                 }
 
             }
