@@ -1,5 +1,7 @@
 package com.example.puzzledroid
 
+import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -23,6 +25,7 @@ import kotlinx.android.synthetic.main.activity_main2.draggableCard16
 import kotlinx.android.synthetic.main.activity_main2.parentCoordinatorLayout
 
 import android.graphics.BitmapFactory
+import android.provider.BaseColumns
 
 import android.widget.TextView
 
@@ -86,9 +89,20 @@ class Juego3Activity : AppCompatActivity() {
                 override fun onViewReleased(view: View, v: Float, v1: Float) {
                     val helper = Helper()
                     Counter += 1
-                    helper.resolve(view, parentCoordinatorLayout, resources,Counter)
+                    val win= helper.resolve(view, parentCoordinatorLayout, resources,Counter)
                     val Contador: TextView = findViewById(R.id.Counter)
                     Contador.text=Counter.toString()
+                    if(win){
+
+                        val intent = Intent(this@Juego3Activity,WinActivity::class.java);
+                        intent.putExtra("Counter", Counter.toString())
+                        startActivity(intent);
+                        finish();
+
+
+
+
+                    }
                 }
             })
         }

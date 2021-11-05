@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_700"
+    android:orientation ="vertical">
+
+    <TextView
+        android:id="@+id/tvPuzzleteam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="PUZZLETEAM"
+        android:textColor="@color/white"
+        android:textSize="42sp"
+        android:layout_margin="30dp"
+
+        android:fontFamily="@font/lilita_one"/>
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="117dp"
+        android:layout_height="104dp"
+        android:layout_gravity="center"
+
+        android:src="@mipmap/puzz" />
+
+    <TextView
+        android:id="@+id/tvBienvenida"
+        android:layout_width="360dp"
+        android:layout_height="100dp"
+        android:layout_margin="18dp"
+        android:gravity="center"
+        android:text="Has Ganado!"
+        android:textColor="@color/white"
+        android:textSize="49sp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        app:cardCornerRadius="14dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/NameToSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search User Score"></androidx.appcompat.widget.AppCompatEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Juegobtn"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:background="@color/purple_700"
+                android:text="Guardar Puntuación"
+                android:textSize="22sp"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</LinearLayout>
