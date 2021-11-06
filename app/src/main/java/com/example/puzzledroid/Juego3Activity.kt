@@ -2,6 +2,7 @@ package com.example.puzzledroid
 
 import android.content.ContentValues
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -54,7 +55,7 @@ class Juego3Activity : AppCompatActivity() {
         parentCoordinatorLayout.addDraggableChild(draggableCard15)
         parentCoordinatorLayout.addDraggableChild(draggableCard16)
 
-        val bm = BitmapFactory.decodeResource(resources, R.drawable.spidi)
+        val bm = GetRandomImage()
 
         val imageCropper = ImageCropper()
         val imagecropped = imageCropper.splitBitmap(bm,4,4,16)
@@ -106,5 +107,35 @@ class Juego3Activity : AppCompatActivity() {
                 }
             })
         }
+    }
+    private fun GetRandomImage() : Bitmap {
+        val photoList = listOf(   R.drawable.imagerandom2,
+            R.drawable.dragonball,
+            R.drawable.imagerandom,
+            R.drawable.arbol1,
+            R.drawable.bosque1,
+            R.drawable.buho,
+            R.drawable.ciervo,
+            R.drawable.fotohojas,
+            R.drawable.isla,
+            R.drawable.bosque2,
+            R.drawable.sunset2,
+            R.drawable.mariposa,
+            R.drawable.mountais,
+            R.drawable.night1,
+            R.drawable.cosarara,
+            R.drawable.arbol2,
+            R.drawable.barco,
+            R.drawable.casa,
+            R.drawable.casabosque,
+            R.drawable.catsillo1,
+            R.drawable.metro,
+            R.drawable.mountain2,
+            R.drawable.rio,
+            R.drawable.sanfrancisco
+        )
+        val randomNumber = (0..(photoList.count()-1)).random()
+        val bm = BitmapFactory.decodeResource(resources, photoList[randomNumber])
+        return bm
     }
 }
