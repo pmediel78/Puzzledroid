@@ -40,4 +40,6 @@ object UserContract {
             const val DATABASE_NAME = "UserTable.db"
         }
     }
+
+    data class UserDTO(val Position: Int,var Name: String, var Score: Int)
 }
