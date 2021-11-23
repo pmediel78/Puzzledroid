@@ -1,10 +1,13 @@
 package com.example.puzzledroid
 
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,12 +21,20 @@ class MainActivity : AppCompatActivity() {
         RankingButtonClick()
         JuegoButtonClick()
         AyudaButtonClick()
+        HacerFotosButtonClick()
     }
 
     private fun JuegoButtonClick() {
         val juegoBtn: Button = findViewById(R.id.Juegobtn)
         juegoBtn.setOnClickListener {
             val intent = Intent(this, JuegoActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun HacerFotosButtonClick() {
+        val HacerFotosBtn: Button = findViewById(R.id.HacerFotosBtn)
+        HacerFotosBtn.setOnClickListener {
+            val intent = Intent(this, HacerFotos::class.java)
             startActivity(intent)
         }
     }
@@ -42,5 +53,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
 
 }
