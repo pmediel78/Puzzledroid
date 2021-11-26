@@ -6,10 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-import kotlinx.android.synthetic.main.activity_main2.draggableCard1
-import kotlinx.android.synthetic.main.activity_main2.draggableCard2
-import kotlinx.android.synthetic.main.activity_main2.draggableCard3
-import kotlinx.android.synthetic.main.activity_main2.draggableCard4
 import kotlinx.android.synthetic.main.activity_main2.parentCoordinatorLayout
 
 import android.graphics.BitmapFactory
