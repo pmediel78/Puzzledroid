@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         RankingButtonClick()
         JuegoButtonClick()
         AyudaButtonClick()
+        JuegoFromPhotoButtonClick()
     }
 
     private fun JuegoButtonClick() {
@@ -39,6 +40,14 @@ class MainActivity : AppCompatActivity() {
         val rankingBtn: Button = findViewById(R.id.Ayudabtn)
         rankingBtn.setOnClickListener {
             val intent = Intent(this, AyudaActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun JuegoFromPhotoButtonClick() {
+        val juegoFromPhotoBtn: Button = findViewById(R.id.JuegoFromPhotobtn)
+        juegoFromPhotoBtn.setOnClickListener {
+            val intent = Intent(this, JuegoFromPhoto::class.java)
             startActivity(intent)
         }
     }
