@@ -27,7 +27,7 @@
 
         android:src="@mipmap/puzz" />
 
-    <TextView
+    <!-- <TextView
         android:id="@+id/tvBienvenida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
         android:text="Bienvenidos al mejor juego de puzzles"
         android:textColor="@color/white"
         android:textSize="25sp"
-        android:layout_margin="18dp"/>
+        android:layout_margin="18dp"/> -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -90,6 +90,16 @@
             android:textSize="22sp"
             app:cornerRadius="16dp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Galeriabtn"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="10dp"
+            android:background="@color/purple_700"
+            android:text="Galeria"
+            android:textSize="22sp"
+            app:cornerRadius="16dp" />
 
     </LinearLayout>
 

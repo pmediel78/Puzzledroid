@@ -1,8 +1,10 @@
 package com.example.puzzledroid
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
 
@@ -19,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         JuegoButtonClick()
         AyudaButtonClick()
         JuegoFromPhotoButtonClick()
+        GaleriaButtonClick()
     }
 
     private fun JuegoButtonClick() {
@@ -49,6 +52,32 @@ class MainActivity : AppCompatActivity() {
         juegoFromPhotoBtn.setOnClickListener {
             val intent = Intent(this, JuegoFromPhoto::class.java)
             startActivity(intent)
+        }
+    }
+
+    private fun GaleriaButtonClick() {
+        val galeriaBtn: Button = findViewById(R.id.Galeriabtn)
+        galeriaBtn.setOnClickListener {
+            cargarGaleria();
+        }
+    }
+
+    private fun cargarGaleria() {
+        println("galeria")
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, 1)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when {
+            requestCode == 1 && resultCode == Activity.RESULT_OK -> {
+                var imageUri = data!!.data
+                println(imageUri)
+            }
         }
     }
 
