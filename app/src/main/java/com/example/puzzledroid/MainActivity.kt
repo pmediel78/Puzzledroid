@@ -58,8 +58,11 @@ class MainActivity : AppCompatActivity() {
     private fun GaleriaButtonClick() {
         val galeriaBtn: Button = findViewById(R.id.Galeriabtn)
         galeriaBtn.setOnClickListener {
-            cargarGaleria();
+            val intent = Intent(this, JuegofromGallery::class.java)
+            startActivity(intent)
         }
+
+
     }
 
     private fun cargarGaleria() {
