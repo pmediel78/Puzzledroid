@@ -1,43 +1,44 @@
 package com.example.puzzledroid
 
-import android.Manifest
-import android.content.ActivityNotFoundException
+import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-
-import kotlinx.android.synthetic.main.activity_main2.parentCoordinatorLayout
-
-import android.graphics.BitmapFactory
-import android.provider.MediaStore
-import android.widget.Button
-import android.widget.ImageView
-import kotlinx.android.synthetic.main.activity_juego_from_photo.*
 import android.widget.TextView
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import kotlin.text.toInt as toInt1
+import kotlinx.android.synthetic.main.activity_juego_from_photo.*
+import kotlinx.android.synthetic.main.activity_main2.*
+import kotlinx.android.synthetic.main.activity_main2.draggableCard1
+import kotlinx.android.synthetic.main.activity_main2.draggableCard2
+import kotlinx.android.synthetic.main.activity_main2.draggableCard3
+import kotlinx.android.synthetic.main.activity_main2.draggableCard4
+import kotlinx.android.synthetic.main.activity_main2.draggableCard5
+import kotlinx.android.synthetic.main.activity_main2.draggableCard6
+import kotlinx.android.synthetic.main.activity_main2.draggableCard7
+import kotlinx.android.synthetic.main.activity_main2.draggableCard8
+import kotlinx.android.synthetic.main.activity_main2.draggableCard9
+import kotlinx.android.synthetic.main.activity_main2.parentCoordinatorLayout
+import android.graphics.BitmapFactory
+import java.io.IOException
+import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.URL
+import android.provider.MediaStore
 
 
 
-class JuegoFromPhoto : AppCompatActivity() {
 
+
+class JuegofromGallery : AppCompatActivity() {
     private val cameraRequest = 1888
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_juego_from_photo)
-
-        if (ContextCompat.checkSelfPermission(applicationContext, Manifest.permission.CAMERA)
-            == PackageManager.PERMISSION_DENIED)
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), cameraRequest)
+        setContentView(R.layout.activity_juegofrom_gallery)
 
 
-            val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(cameraIntent, cameraRequest)
+        cargarGaleria()
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         parentCoordinatorLayout.addDraggableChild(draggableCard1)
@@ -68,8 +69,8 @@ class JuegoFromPhoto : AppCompatActivity() {
                     val Contador: TextView = findViewById(R.id.Counter)
                     Contador.text = Counter.toString()
                     if (win) {
-                        val intent = Intent(this@JuegoFromPhoto, MainActivity::class.java);
-                       
+                        val intent = Intent(this@JuegofromGallery, MainActivity::class.java);
+
                         startActivity(intent);
                         finish();
                     }
@@ -119,13 +120,34 @@ class JuegoFromPhoto : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == cameraRequest) {
-             val photo = data?.extras?.get("data") as Bitmap
 
-            SetCardswithImages(photo)
+        when {
 
+            requestCode == 1 && resultCode == Activity.RESULT_OK -> {
+
+                val url = data!!.data
+                println(url.toString())
+                val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, url)
+                println(bitmap)
+                if (bitmap != null) {
+                    SetCardswithImages(bitmap)
+                }
+            }
         }
     }
+
+    private fun cargarGaleria() {
+        println("galeria")
+        val intent = Intent(Intent.ACTION_PICK)
+        println("galeria2")
+        intent.type = "image/*"
+        println("galeria3")
+        startActivityForResult(intent, 1)
+        println("galeria4")
+
+    }
+
+
 
 
 
