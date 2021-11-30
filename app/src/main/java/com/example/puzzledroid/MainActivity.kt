@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
+import com.ramijemli.easings.Easings
+import com.ramijemli.easings.Interpolators
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +17,48 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         SetButtonOnClickListeners();
+
+        StartAnimations()
+
     }
+
+    private fun StartAnimations() {
+        val juegoBtn: Button = findViewById(R.id.Juegobtn)
+        ButtonAnimation(juegoBtn,300L)
+
+        val Rankingbtn: Button = findViewById(R.id.Rankingbtn)
+        ButtonAnimation(Rankingbtn,450L)
+
+        val Ayudabtn: Button = findViewById(R.id.Ayudabtn)
+        ButtonAnimation(Ayudabtn,600L)
+
+        val JuegoFromPhotobtn: Button = findViewById(R.id.JuegoFromPhotobtn)
+        ButtonAnimation(JuegoFromPhotobtn,750L)
+
+        val Galeriabtn: Button = findViewById(R.id.Galeriabtn)
+        ButtonAnimation(Galeriabtn,900L)
+    }
+
+    private fun ButtonAnimation(button: Button,delay: Long) {
+        button.animate().apply {
+            startDelay = delay
+            duration = 3000
+            translationX(280F)
+            interpolator = Interpolators(Easings.ELASTIC_OUT)
+            start()
+        }
+    }
+
+    private fun Title(textView: TextView,delay: Long) {
+        textView.animate().apply {
+            startDelay = delay
+            duration = 3000
+            scaleXBy(3F)
+            interpolator = Interpolators(Easings.ELASTIC_OUT)
+            start()
+        }
+    }
+
 
     fun SetButtonOnClickListeners() {
         RankingButtonClick()

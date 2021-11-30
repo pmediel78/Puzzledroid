@@ -38,41 +38,38 @@
         android:layout_margin="18dp"/> -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="509dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="10dp"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:padding="20dp">
+
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Juegobtn"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
             android:text="Jugar"
-            android:textSize="22sp"
-         />
+            android:textSize="22sp" />
 
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Rankingbtn"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
             android:text="Ranking"
-            android:textSize="22sp"
-            />
+            android:textSize="22sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/Ayudabtn"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
             android:text="AYUDA"
@@ -83,7 +80,6 @@
             android:id="@+id/JuegoFromPhotobtn"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
             android:text="Foto"
@@ -94,7 +90,6 @@
             android:id="@+id/Galeriabtn"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
             android:text="Galeria"
