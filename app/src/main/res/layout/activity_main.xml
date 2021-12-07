@@ -19,23 +19,24 @@
 
         android:fontFamily="@font/lilita_one"/>
 
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="117dp"
-        android:layout_height="104dp"
-        android:layout_gravity="center"
-
-        android:src="@mipmap/puzz" />
-
-    <!-- <TextView
-        android:id="@+id/tvBienvenida"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Bienvenidos al mejor juego de puzzles"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:layout_margin="18dp"/> -->
+        android:layout_marginHorizontal="120dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="117dp"
+            android:layout_height="117dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/puzz" />
+        <Button
+            android:id="@+id/btnplay"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="509dp"
