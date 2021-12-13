@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Puzzledroid</string>
+    <string name="play">Play</string>
+    <string name="ranking">Ranking</string>
+    <string name="help">Help</string>
+    <string name="photo">Photo</string>
+    <string name="gallery">Gallery</string>
+    <string name="movements">Movements</string>
+    <string name="level">Level</string>
+    <string name="search_player">Search Player</string>
+    <string name="save_score">Saves Score</string>
+    <string name="you_win">You Win!</string>
+</resources>

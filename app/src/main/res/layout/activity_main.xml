@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
-            android:text="Jugar"
+            android:text="@string/play"
             android:textSize="22sp" />
 
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
-            android:text="Ranking"
+            android:text="@string/ranking"
             android:textSize="22sp" />
 
         <com.google.android.material.button.MaterialButton
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
-            android:text="AYUDA"
+            android:text="@string/help"
             android:textSize="22sp"
             app:cornerRadius="16dp" />
 
@@ -83,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
-            android:text="Foto"
+            android:text="@string/photo"
             android:textSize="22sp"
             app:cornerRadius="16dp" />
 
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
             android:background="@color/purple_700"
-            android:text="Galeria"
+            android:text="@string/gallery"
             android:textSize="22sp"
             app:cornerRadius="16dp" />
 
