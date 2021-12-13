@@ -15,16 +15,26 @@ import com.ramijemli.easings.Interpolators
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.appcompat.app.AppCompatActivity
+import butterknife.BindView
+import butterknife.ButterKnife
+import butterknife.OnClick
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    @BindView(R.id.Juegobtn) lateinit var juegoBTN: Button
+    @BindView(R.id.Rankingbtn) lateinit var rankingBTN: Button
+    @BindView(R.id.Ayudabtn) lateinit var ayudaBTN: Button
+    @BindView(R.id.JuegoFromPhotobtn) lateinit var juegoFromPhotoBTN: Button
+    @BindView(R.id.Galeriabtn) lateinit var galeriaBTN: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        println(0);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        SetButtonOnClickListeners();
+        ButterKnife.bind(this)
+
         StartAnimations()
+
     }
 
     private fun StartAnimations() {
@@ -83,56 +93,51 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun SetButtonOnClickListeners() {
-        RankingButtonClick()
-        JuegoButtonClick()
-        AyudaButtonClick()
-        JuegoFromPhotoButtonClick()
-        GaleriaButtonClick()
+
+
+
+    @OnClick(R.id.Juegobtn)
+    fun  JuegoClick() {
+       val intent = Intent(this, JuegoActivity::class.java)
+       startActivity(intent)
     }
 
-    private fun JuegoButtonClick() {
-        val juegoBtn: Button = findViewById(R.id.Juegobtn)
-        juegoBtn.setOnClickListener {
-            val intent = Intent(this, JuegoActivity::class.java)
-
-            startActivity(intent)
-
-        }
+    @OnClick(R.id.Rankingbtn)
+    fun  RankingClick() {
+        val intent = Intent(this, RankingActivity::class.java)
+        startActivity(intent)
     }
 
-    private fun RankingButtonClick() {
-        val rankingBtn: Button = findViewById(R.id.Rankingbtn)
-        rankingBtn.setOnClickListener {
-            val intent = Intent(this, RankingActivity::class.java)
-            startActivity(intent)
-        }
-    }
-    private fun AyudaButtonClick() {
-        val rankingBtn: Button = findViewById(R.id.Ayudabtn)
-        rankingBtn.setOnClickListener {
-            val intent = Intent(this, AyudaActivity::class.java)
-            startActivity(intent)
-        }
+    @OnClick(R.id.Ayudabtn)
+    fun  AyudaButtonClick() {
+        val intent = Intent(this, AyudaActivity::class.java)
+        startActivity(intent)
     }
 
-    private fun JuegoFromPhotoButtonClick() {
-        val juegoFromPhotoBtn: Button = findViewById(R.id.JuegoFromPhotobtn)
-        juegoFromPhotoBtn.setOnClickListener {
-            val intent = Intent(this, JuegoFromPhoto::class.java)
-            startActivity(intent)
-        }
+    @OnClick(R.id.JuegoFromPhotobtn)
+    fun  JuegoFromPhotoButtonClick() {
+        val intent = Intent(this, JuegoFromPhoto::class.java)
+        startActivity(intent)
     }
 
-    private fun GaleriaButtonClick() {
+    //With ButterKnife
+    @OnClick(R.id.Galeriabtn)
+    fun  GaleriaButtonClick() {
+        val intent = Intent(this, JuegofromGallery::class.java)
+        startActivity(intent)
+    }
+
+    //Without ButterKnife
+    /*private fun GaleriaButtonClick() {
         val galeriaBtn: Button = findViewById(R.id.Galeriabtn)
         galeriaBtn.setOnClickListener {
             val intent = Intent(this, JuegofromGallery::class.java)
             startActivity(intent)
         }
+    }*/
 
 
-    }
+
 
     private fun cargarGaleria() {
         println("galeria")
