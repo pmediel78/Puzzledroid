@@ -5,10 +5,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.BaseColumns
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.android.synthetic.main.activity_win.*
+import com.google.firebase.database.DatabaseReference
+
+import com.google.firebase.database.FirebaseDatabase
+import androidx.annotation.NonNull
+
+import com.google.android.gms.tasks.OnFailureListener
+
+import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.auth.FirebaseAuth
+
+import com.google.firebase.auth.FirebaseUser
+
+
+
+
 
 class WinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,11 +41,27 @@ class WinActivity : AppCompatActivity() {
     private fun JuegoButtonClick() {
         val juegoBtn: Button = findViewById(R.id.Juegobtn)
         juegoBtn.setOnClickListener {
+
+
+
             val Contador_1= intent.getStringExtra("Counter")?.toInt()
             var Counter = Contador_1
 
             val name = NameToSave.editText?.text.toString()
 
+            val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
+            val user = FirebaseAuth.getInstance().currentUser
+            val userScore: MutableMap<String, Any> = HashMap()
+            userScore["Score"] = Counter.toString()
+            userScore["User"] = user?.displayName.toString()
+
+            db.collection("Scores")
+                .add(userScore)
+
+
+
+            /**
 
 
             val dbHelper = UserContract.UserDbHelper(applicationContext)
@@ -64,6 +97,9 @@ class WinActivity : AppCompatActivity() {
                 null,                   // don't filter by row groups
                 sortOrder               // The sort order
             )
+          **/
+
+
             val intent = Intent(this, RankingActivity::class.java)
             startActivity(intent)
         }
