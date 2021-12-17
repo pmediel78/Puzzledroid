@@ -20,8 +20,8 @@ class Register : AppCompatActivity() {
     }
 
     fun register(view: View){
-        val email=editTextEmailAddress.text.toString()
-        val password=editTextPassword.text.toString()
+        val email=editTextEmailAddress.editText?.text.toString()
+        val password=editTextPassword.editText?.text.toString()
 
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task ->
             if(task.isSuccessful){
