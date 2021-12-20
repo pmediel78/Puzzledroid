@@ -53,7 +53,11 @@ class WinActivity : AppCompatActivity() {
 
             val user = FirebaseAuth.getInstance().currentUser
             val userScore: MutableMap<String, Any> = HashMap()
-            userScore["Score"] = Counter.toString()
+            if (Counter != null) {
+                userScore["Score"] = Counter.toInt()
+            } else {
+                userScore["Score"] = 0
+            }
             userScore["User"] = user?.email.toString()
 
             db.collection("Scores")

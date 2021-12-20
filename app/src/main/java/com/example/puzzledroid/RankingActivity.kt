@@ -8,23 +8,56 @@ import android.provider.BaseColumns
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_ranking.*
 import kotlinx.android.synthetic.main.activity_win.*
 import kotlinx.android.synthetic.main.activity_win.NameToSave
+import com.google.firebase.firestore.QueryDocumentSnapshot
+
+import com.google.firebase.firestore.QuerySnapshot
+
+import androidx.annotation.NonNull
+
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.firestore.Query
+
 
 class RankingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ranking)
 
-
         SetButtonOnClickListeners()
 
         //SetBackButton Al ActionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        val userScoreList = GetDbData()
-        FirstRanking(userScoreList)
+        var rankingPosition = 1
+        val db = FirebaseFirestore.getInstance()
+        db.collection( "Scores")
+            .orderBy("Score", Query.Direction.DESCENDING)
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val userScores = mutableListOf<UserContract.UserDTO>()
+                    for (document in task.result!!) {
+
+                        val name = document.data.get("User") as String
+                        val score = document.data.get("Score") as Long
+                        Log.d("prueba", " entra " )
+                        val userScore = UserContract.UserDTO(rankingPosition, name, score.toInt())
+                        userScores.add(userScore)
+                        rankingPosition += 1
+                    }
+                    FirstRanking(userScores)
+                } else {
+                    Log.w("prueba", "Error getting documents.", task.exception)
+                }
+            }
+
+        /*val userScoreList = GetFirebaseData()*/
+        /*FirstRanking(userScoreList)*/
     }
 
 
@@ -40,6 +73,29 @@ class RankingActivity : AppCompatActivity() {
             UpdateRankingWithSearch(list)
         }
 
+    }
+
+    fun GetFirebaseData() : List<UserContract.UserDTO> {
+        val userScores = mutableListOf<UserContract.UserDTO>()
+        var rankingPosition = 1
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Scores")
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    for (document in task.result!!) {
+                        val name = document.data.get("User") as String
+                        val score = document.data.get("Score") as String
+                        Log.d("prueba", " entra " )
+                        val userScore = UserContract.UserDTO(rankingPosition, name, score.toInt())
+                        userScores.add(userScore)
+                        rankingPosition += 1
+                    }
+                } else {
+                    Log.w("prueba", "Error getting documents.", task.exception)
+                }
+            }
+        return userScores
     }
 
     fun GetDbData() : List<UserContract.UserDTO> {
