@@ -29,8 +29,6 @@ class RankingActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ranking)
 
         SetButtonOnClickListeners()
-
-        //SetBackButton Al ActionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         var rankingPosition = 1
@@ -45,19 +43,15 @@ class RankingActivity : AppCompatActivity() {
 
                         val name = document.data.get("User") as String
                         val score = document.data.get("Score") as Long
-                        Log.d("prueba", " entra " )
                         val userScore = UserContract.UserDTO(rankingPosition, name, score.toInt())
                         userScores.add(userScore)
                         rankingPosition += 1
                     }
                     FirstRanking(userScores)
                 } else {
-                    Log.w("prueba", "Error getting documents.", task.exception)
+                    Log.w("Log", "Error getting documents.", task.exception)
                 }
             }
-
-        /*val userScoreList = GetFirebaseData()*/
-        /*FirstRanking(userScoreList)*/
     }
 
 
@@ -73,29 +67,6 @@ class RankingActivity : AppCompatActivity() {
             UpdateRankingWithSearch(list)
         }
 
-    }
-
-    fun GetFirebaseData() : List<UserContract.UserDTO> {
-        val userScores = mutableListOf<UserContract.UserDTO>()
-        var rankingPosition = 1
-        val db = FirebaseFirestore.getInstance()
-        db.collection("Scores")
-            .get()
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    for (document in task.result!!) {
-                        val name = document.data.get("User") as String
-                        val score = document.data.get("Score") as String
-                        Log.d("prueba", " entra " )
-                        val userScore = UserContract.UserDTO(rankingPosition, name, score.toInt())
-                        userScores.add(userScore)
-                        rankingPosition += 1
-                    }
-                } else {
-                    Log.w("prueba", "Error getting documents.", task.exception)
-                }
-            }
-        return userScores
     }
 
     fun GetDbData() : List<UserContract.UserDTO> {
